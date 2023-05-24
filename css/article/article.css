@@ -1,0 +1,285 @@
+
+.ba__container {
+    padding: 0 75px;
+    color: #2D2D2D;
+}
+
+.ba__bread-crumbs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-height: 21px;
+}
+
+.ba__item {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: #525252;
+}
+
+.ba__nav-arrow {
+    width: 6px;
+    height: 10px;
+    margin: 0 16px;
+}
+
+.ba__header {
+    padding: 148px 0 80px 0;
+}
+
+main {
+    padding-bottom: 350px;
+}
+
+.ba__title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 130%;
+    color: inherit;
+    margin-bottom: 40px;
+}
+
+.ba__grid-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas:
+        "hero    adv"
+        "hero    adv";
+    column-gap: 143px;
+}
+
+.ba__hero {
+    max-width: 1095px;
+    grid-area: hero;
+}
+
+.ba__adv {
+    grid-area: adv;
+}
+
+.ba__adv-image-block {
+    height: 328px;
+    width: 532px;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ba__adv-item:nth-child(1)
+.ba__adv-image-block {
+    background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
+    rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../../img/article/banner/banner-turkey.jpg");
+}
+
+.ba__adv-item:nth-child(2)
+.ba__adv-image-block {
+    background-image: linear-gradient(180.72deg, rgba(0, 0, 0, 0) 37.06%,
+    rgba(0, 0, 0, 0.44) 75.75%, rgba(0, 0, 0, 0.64) 100%), url("../../img/article/banner/banner-reno.jpg");
+}
+
+.ba__adv-item {
+    margin-bottom: 50px;
+}
+
+.ba__adv-image-block {
+    position: relative;
+}
+
+
+.ba__text {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    margin-bottom: 100px;
+}
+
+.ba__image-text-block * {
+    position: absolute;
+    color: white;
+    left: 30px;
+}
+
+.ba__image-text-big {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    max-width: 435px;
+}
+
+.ba__image-text-small {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    bottom: 34px;
+}
+
+.ba__adv-item:nth-child(1)
+.ba__image-text-big {
+    bottom: 57px;
+}
+
+.ba__adv-item:nth-child(2)
+.ba__image-text-big {
+    bottom: 72px;
+}
+
+
+.ba__adv-item:nth-child(1)
+.ba__image-text-small {
+    bottom: 27px;
+}
+
+.ba__adv-item:nth-child(2)
+.ba__image-text-small {
+    bottom: 38px;
+}
+
+.ba__subblock {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.ba__backlink {
+    display: flex;
+    justify-content: center;
+}
+
+.ba__link-text {
+    padding-top: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.ba__left-arrow {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    fill: #2D2D2D;
+}
+
+.ba__about-info {
+    max-height: 114px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.ba__author {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    color: #000000;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.ba__reviews-subblock {
+    max-width: 173px;
+    color: #8F8F8F;
+    height: 61px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 1465px) {
+    .ba__grid-container {
+        display: block;
+    }
+
+    .ba__hero {
+        margin: 0 auto;
+    }
+
+    .ba__adv {
+        display: none;
+    }
+}
+
+@media (max-width: 890px) {
+    .ba__header {
+        padding: 70px 0px 20px 0px;
+    }
+
+    .ba__item{
+        font-size: 12px;
+    }
+
+    .ba__title {
+        font-size: 25px;
+    }
+
+    .ba__text {
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+
+    .ba__link-text{
+        font-size: 12px;
+    }
+
+    .ba__author{
+        font-size: 12px;
+    }
+
+    .article__datetime{
+        text-align: right;
+    }
+
+    main{
+        padding: 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .ba__bread-crumbs{
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+        max-height: unset;
+    }
+
+    .ba__navigation{
+        margin-bottom: 10px;
+    }
+
+    .ba__header {
+        padding: 30px 0px 10px 0px;
+    }
+
+    .ba__container{
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 390px) {
+    .ba__subblock{
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .ba__text{
+        margin-bottom: 21px;
+    }
+
+    .ba__reviews-subblock{
+        height: 49px;
+    }
+
+    .ba__author{
+        margin-bottom: 0px;
+    }
+
+    .ba__about-info{
+        align-self: end;
+    }
+
+    .article__views-comments{
+        gap: 10px;
+    }
+}

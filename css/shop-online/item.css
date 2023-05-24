@@ -1,0 +1,683 @@
+.news__container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 210px) repeat(4, 228px);
+
+    grid-template-areas:
+    "banner banner banner banner banner banner"
+    "banner banner banner banner banner banner"
+    "book   time   pair   pair   gift   gift"
+    "shoe   shoe   pair   pair   december   december"
+    "ny     ny     ny     ny     dress   chemi"
+    "ny     ny     ny     ny     dress   toys";
+    gap: 60px;
+}
+
+.item__gallery-notebook {
+    grid-area: banner;
+}
+
+.item__gallery-book {
+    grid-area: book;
+}
+
+.item__gallery-time {
+    grid-area: time;
+}
+
+.item__gallery-shoes {
+    grid-area: shoe;
+}
+
+.item__gallery-second-pair {
+    grid-area: pair;
+}
+
+.item__gallery-gift-ideas {
+    grid-area: gift;
+}
+
+.item__gallery-profitable-december {
+    grid-area: december;
+}
+
+.item__gallery-new-year {
+    grid-area: ny;
+}
+
+.item__gallery-dresses {
+    grid-area: dress;
+}
+
+.item__gallery-chemicals {
+    grid-area: chemi;
+}
+
+.item__gallery-ny-toys {
+    grid-area: toys;
+}
+
+.item__gallery {
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.item__gallery:after {
+    background-color: var(--yellow-color);
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 39px;
+}
+
+.item__gallery:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.item__timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 0 auto;
+    padding-bottom: 36px;
+}
+
+.item__text-bold {
+    font-weight: 700;
+}
+
+.item__text-big {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 67.2px;
+}
+
+.item__gallery-notebook:before {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.item__gallery-notebook {
+    background-image: url("../../img/item/timer.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    gap: 137px;
+}
+
+.item__gallery-notebook-changed {
+    align-items: center;
+    justify-content: center;
+}
+
+
+.item__text-notebook {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 130%;
+    max-width: fit-content;
+    max-height: 130%;
+    padding-left: 112px;
+}
+
+.item__text-notebook-changed {
+    padding-left: 0;
+    padding-bottom: 30px;
+}
+
+.item__gallery-book:before {
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+}
+
+.item__gallery-book {
+    background-image: url("../../img/item/1.jpg");
+    display: flex;
+    align-items: end;
+}
+
+.item__text-book {
+    max-width: 232px;
+    max-height: 100px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 39px;
+    margin: auto auto 32px 13px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item__gallery-time:before {
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+}
+
+.item__gallery-discount-bottom-left:after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.item__gallery-discount-top-left:after {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.item__gallery-time:after {
+    content: "-25%";
+}
+
+.item__gallery-time {
+    background-image: url("../../img/item/2.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.item__text-time {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 39px;
+    padding-top: 67px;
+    padding-left: 14px;
+}
+
+.item__gallery-shoes:before {
+    background: linear-gradient(180.99deg, rgba(0, 0, 0, 0) 8.18%, rgba(0, 0, 0, 0.2) 99.15%);
+}
+
+.item__gallery-shoes:after {
+    content: "-40%";
+}
+
+.item__gallery-shoes {
+    display: flex;
+}
+
+.item__image-shoes {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.item__gallery-second-pair:before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25.39%, rgba(0, 0, 0, 0.16) 100%);
+}
+
+.item__gallery-second-pair {
+    background-image: url("../../img/item/4.jpg");
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+}
+
+.item__text-second-pair {
+    max-width: 510px;
+    max-height: 167px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    padding: 24px 26px;
+    background-color: var(--lightblue-color, #38c0eb);
+    border-radius: 20px;
+    margin: auto 20px 20px 20px;
+}
+
+.item__gallery-gift-ideas:before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 7.46%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.item__gallery-gift-ideas {
+    background-image: url("../../img/item/5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+}
+
+.item__text-new-ideas {
+    max-width: 378px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    padding: 0 0 30px 30px;
+}
+
+.item__gallery-profitable-december:before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.28%, rgba(0, 0, 0, 0.2) 100%)
+}
+
+.item__gallery-profitable-december:after {
+    content: "-15%";
+}
+
+.item__gallery-profitable-december {
+    background-image: url("../../img/item/6.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+}
+
+.item__text-profitable-december {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46px;
+    padding: 0 0 40px 30px;
+}
+
+.item__gallery-new-year:before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.28%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.item__gallery-new-year {
+    background-image: url("../../img/item/7.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+}
+
+.item__text-new-year {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    padding: 30px 40px;
+    color: var(--red-color, #f91155);
+    background-color: var(--white-color, #ffffff);
+    border-radius: 20px;
+    margin: auto auto 50px 50px;
+}
+
+.item__gallery-dresses:before {
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+}
+
+.item__gallery-dresses:after {
+    content: "-55%";
+}
+
+.item__gallery-dresses {
+    background-image: url("../../img/item/8.jpg");
+    background-size: cover;
+}
+
+.item__gallery-chemicals:before {
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+}
+
+.item__gallery-chemicals:after {
+    content: "-25%";
+}
+
+.item__gallery-chemicals {
+    background-image: url("../../img/item/9.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+}
+
+.item__text-chemicals {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 39px;
+    padding: 0 0 12px 20px;
+}
+
+.item__gallery-ny-toys:before {
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%);
+}
+
+.item__image-ny-toys {
+    transform: matrix(-1, 0, 0, 1, 0, 0) scale(1.5);
+    object-fit: cover;
+    object-position: 21px -1px;
+    height: 100%;
+    width: 100%;
+}
+
+
+@media (max-width: 1880px) {
+    .item__text-profitable-december {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 890px) {
+    .item__text-notebook-changed {
+        max-width: 400px;
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 680px) {
+    .item__text-profitable-december {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 1800px) {
+    .item__text-time {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .news__container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 160px) 202px repeat(3, 194px) repeat(2, 214px);
+        column-gap: 30px;
+        row-gap: 22px;
+
+        grid-template-areas:
+    "banner banner banner banner"
+    "banner banner banner banner"
+    "book   time   pair   pair  "
+    "shoe   shoe   pair   pair  "
+    "gift   gift   dress  chemi"
+    "december     december     dress  toys"
+    "ny     ny     ny     ny"
+    "ny     ny     ny     ny";
+    }
+
+    .item__timer {
+        padding-bottom: 30px;
+    }
+
+    .item__text-big {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .item__gallery-notebook {
+        gap: 63px;
+    }
+
+    .item__text-notebook {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 52px;
+    }
+
+    .item__text-book {
+        max-width: 120px;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 31.2px;
+        margin: auto auto 15px 10px;
+    }
+
+    .item__text-time {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 31.2px;
+    }
+
+    .item__text-second-pair {
+        max-width: 1440px;
+    }
+
+    .item__text-new-ideas {
+        font-size: 30px;
+        line-height: 39px;
+    }
+
+    .item__text-profitable-december {
+        top: 119px;
+        left: 30px;
+        font-size: 30px;
+        line-height: 39px;
+    }
+
+    .item__gallery-new-year {
+        margin-top: 32px;
+    }
+
+    .item__text-new-year {
+        top: 300px;
+        left: 30px;
+        font-size: 30px;
+        line-height: 36px;
+        padding: 24px 46px;
+        margin: auto auto 39px 30px;
+    }
+
+    .item__text-chemicals {
+        font-size: 20px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news__container {
+        grid-template-columns: 1fr 1fr 1.3fr 1.3fr;
+        grid-template-rows: repeat(2, 138px) 130px repeat(3, 126px) repeat(2, 157.5px);
+        column-gap: 20px;
+        row-gap: 22px;
+    }
+
+    .item__text-big {
+        font-size: 26px;
+        line-height: 28.6px;
+    }
+
+    .item__gallery:after {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+    }
+
+    .item__gallery-time:after {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .item__gallery-shoes:after {
+        top: 10px;
+        left: 10px;
+    }
+
+    .item__gallery-profitable-december:after {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .item__gallery-dresses:after {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .item__gallery-chemicals:after {
+        top: 10px;
+        left: 10px;
+    }
+
+    .item__text-notebook {
+        padding-left: 80px;
+    }
+
+    .item__text-notebook-changed {
+        padding: 0;
+        text-align: center;
+    }
+
+
+    .item__text-notebook {
+        font-size: 30px;
+        line-height: 39px;
+    }
+
+    .item__text-book {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .item__text-time {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20.8px;
+    }
+
+    .item__text-second-pair {
+        font-size: 16px;
+        line-height: 17.6px;
+        padding: 12px 15px 18px 15px;
+        border-radius: 12px;
+    }
+
+    .item__text-new-ideas {
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .item__text-profitable-december {
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .item__gallery-new-year {
+        margin-top: 0;
+    }
+
+    .item__text-new-year {
+        font-size: 20px;
+        line-height: 24px;
+        padding: 22px 34px;
+        border-radius: 12px;
+        margin: auto auto 26px 26px;
+    }
+
+    .item__text-chemicals {
+        font-size: 16px;
+        line-height: 18px;
+        max-width: 170px;
+    }
+}
+
+@media (max-width: 709px) {
+
+    .item__text-new-ideas {
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 599px) {
+    .news__container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 160px) repeat(8, 130px) repeat(1, 123px);
+        gap: 20px;
+
+        grid-template-areas:
+    "banner banner "
+    "banner banner "
+    "book   time   "
+    "shoe   shoe   "
+    "pair   pair   "
+    "pair   pair   "
+    "gift   gift"
+    "december     december"
+    "dress     chemi"
+    "dress     toys"
+    "ny     ny";
+    }
+
+    .item__text-big {
+        font-size: 16px;
+        line-height: 17.6px;
+    }
+
+    .item__gallery-notebook {
+        align-items: center;
+        gap: 168px;
+    }
+
+
+    .item__text-notebook {
+        padding: 0;
+        font-size: 22px;
+        line-height: 28.6px;
+        max-width: 225px;
+    }
+
+    .item__text-book {
+        font-size: 12px;
+        line-height: 13.2px;
+    }
+
+    .item__text-time {
+        font-size: 12px;
+        line-height: 15.6px;
+    }
+
+    .item__gallery-second-pair {
+        text-align: center;
+    }
+
+    .item__text-second-pair {
+        font-size: 12px;
+        line-height: 13.2px;
+        padding: 7px 25px 11px 25px;
+        margin: auto 10px 10px 10px;
+    }
+
+    .item__text-new-ideas {
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+
+    .item__text-profitable-december {
+        font-size: 12px;
+        line-height: 14.4px;
+        max-width: 150px;
+    }
+
+    .item__text-new-year {
+        font-size: 12px;
+        line-height: 14.4px;
+        padding: 7px 41px;
+        margin: auto auto 10px 15px;
+    }
+
+    .item__text-chemicals {
+        font-size: 12px;
+        line-height: 14.4px;
+        padding: 0 10px 5px 9px;
+    }
+}
+
+@media (max-width: 540px) {
+    .item__gallery-notebook {
+        gap: 163px;
+    }
+}
+
+@media (max-width: 323px) {
+    .item__text-second-pair {
+        padding: 7px 20px 11px 20px;
+    }
+}
