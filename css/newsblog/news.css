@@ -1,0 +1,15 @@
+.news__subtitle{
+    height: 74px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 130%;
+    color: #212121;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+
+.news__subtitle-text{
+    text-transform: capitalize;
+}

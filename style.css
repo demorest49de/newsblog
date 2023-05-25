@@ -3,11 +3,8 @@
 @import "css/global.css";
 @import "css/var.css";
 
-@import "css/shop-online/header.css";
-/*@import "css/shop-online/main.css";*/
-/*@import "css/shop-online/item.css";*/
-/*@import "css/shop-online/timer.css";*/
-/*@import "css/shop-online/footer.css";*/
+@import "css/newsblog/header.css";
+@import "css/newsblog/main.css";
+@import "css/newsblog/news.css";
 
-/*@import "css/blog/blog.css";*/
-/*@import "css/article/article.css";*/
+/*@import "css/newsblog/footer.css";*/
