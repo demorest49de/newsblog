@@ -1,0 +1,27 @@
+.footer {
+    padding-top: 25px;
+    padding-bottom: 21px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__logo-block {
+    display: flex;
+    align-self: center;
+    max-width: fit-content;
+    gap: 6.27px;
+    height: 40px;
+    grid-area: logo;
+}
+
+@media (max-width: 870px) {
+
+    @media (max-width: 590px) {
+        .footer {
+            padding-top: 6px;
+        }
+    }
+}
