@@ -15,13 +15,33 @@
     gap: 6.27px;
     height: 40px;
     grid-area: logo;
+    padding-bottom: 9px;
 }
 
-@media (max-width: 870px) {
+.footer__container {
+    display: flex;
+    align-items: end;
+}
 
-    @media (max-width: 590px) {
-        .footer {
-            padding-top: 6px;
-        }
+.footer__social {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 13px;
+}
+
+.footer__copyright {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 130%;
+    color: #212121;
+}
+
+@media (max-width: 590px) {
+    .footer {
+        padding-top: 6px;
+    }
+
+    .footer__copyright{
+        display: none;
     }
 }
