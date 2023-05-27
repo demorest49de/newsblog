@@ -1,6 +1,7 @@
 .footer {
     padding-top: 25px;
     padding-bottom: 21px;
+    border-top: 1px solid #E6E6E6;
 }
 
 .footer__container {
@@ -39,6 +40,7 @@
 @media (max-width: 590px) {
     .footer {
         padding-top: 6px;
+        padding-bottom: 10px;
     }
 
     .footer__copyright{

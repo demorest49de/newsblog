@@ -1,0 +1,7 @@
+#app{
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
+}
