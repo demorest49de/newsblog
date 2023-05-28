@@ -1,6 +1,7 @@
 import {renderNews} from './module/news/render.js';
-import {loadNewsHandler} from "./module/news/load.js";
+import {getNewsHandler} from "./module/news/rest.js";
 import {getVars} from "./module/news/varsStorage.js";
+import {submitForm} from "./module/news/control.js";
 
 {
     const newsInit = (selectorApp) => {
@@ -8,8 +9,8 @@ import {getVars} from "./module/news/varsStorage.js";
         data.push(selectorApp);
         const $ = getVars(data);
         $.selectorApp = selectorApp;
-        console.log(' : ',$);
-        loadNewsHandler($);
+        getNewsHandler($);
+        submitForm($);
     };
     window.newsInit = newsInit;
 }
