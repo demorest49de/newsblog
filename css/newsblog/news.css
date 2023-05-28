@@ -37,6 +37,11 @@
     overflow: hidden;
 }
 
+/*.item__image img {*/
+/*    object-fit: contain;*/
+/*    object-position: center;*/
+/*}*/
+
 .item__block {
     position: relative;
 }
@@ -102,7 +107,7 @@
 }
 
 @media (max-width: 660px) {
-    .news__list{
+    .news__list {
         justify-content: center;
     }
 }

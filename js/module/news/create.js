@@ -52,33 +52,7 @@ const createMain = () => {
 
                 <div class="news__list">
 
-                    <article class="list__item item">
-                        <a class="item__link" href="article.html?id=28965">
-                            <figure class="item__image">
-                                <img src="img/news/image.jpg" alt="Cubicularis audeo suffragium conatus uter tot.">
-                            </figure>
-                            <div class="item__block">
-                                <h3 class="item__subtitle">
-                                    1111111111111111111111111111111111111
-                                </h3>
-                                <div class="item__preview-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda
-                                    consequatur
-                                    delectus doloribus eos est et eum fugiat in ipsam labore magnam maiores
-                                    molestiae
-                                    quaerat quas qui quo, quod, quos sequi similique unde vitae voluptas voluptatem.
-                                    Debitis officia ut vero?
-                                </div>
-                                <div class="item__subblock">
-                                    <div class="item__datetime">
-                                        <span class="item__date">16/03/2022</span>
-                                        <span class="item__time">17:44</span>
-                                    </div>
-                                    <span class="item__author">Андрей Билирутдинов</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
+                    
 
                     <article class="list__item item">
                         <a class="item__link" href="article.html?id=28965">
@@ -233,5 +207,43 @@ export const createNews = () => {
     const header = createHeader();
     const main = createMain();
     const footer = createFooter();
-    return [header, main, footer];
+    return [header, main, footer,];
+};
+
+
+export const createRow = ({
+                              author,
+                              description,
+                              publishedAt,
+                              title,
+                              url,
+                              urlToImage,
+                              source,
+                          }) => {
+    const article = document.createElement('article');
+    article.classList.add('list__item', 'item');
+
+    article.innerHTML = `
+        <a class="item__link" href="${url}">
+            <figure class="item__image">
+                <img src="${urlToImage}" alt="${title}">
+            </figure>
+            <div class="item__block">
+                <h3 class="item__subtitle">
+                    ${title}
+                </h3>
+                <div class="item__preview-text">
+                    ${description}
+                </div>
+                <div class="item__subblock">
+                    <div class="item__datetime">
+                        <span class="item__date">16/03/2022</span>
+                        <span class="item__time">17:44</span>
+                    </div>
+                    <span class="item__author">${author}</span>
+                </div>
+            </div>
+        </a>
+  `;
+    return article;
 };

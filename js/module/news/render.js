@@ -1,4 +1,4 @@
-import {createNews} from './create.js';
+import {createNews, createRow} from './create.js';
 
 
 export const
@@ -9,3 +9,14 @@ export const
         return data;
     };
 
+
+export const renderNewsItems = (items, newsList) => {
+    while (newsList.firstChild) {
+        newsList.removeChild(newsList.firstChild);
+    }
+    console.log(' : ',items);
+    items.forEach((value) => {
+        const row = createRow(value);
+        newsList.append(row);
+    });
+};
