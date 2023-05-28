@@ -16,7 +16,7 @@ const createHeader = () => {
             <form class="header__form-search form-search" method="post" name="header__form-search">
                 <input type="search"
                        class="form-search__input"
-                       name="form-search__input"
+                       name="search"
                        placeholder="Я хочу узнать про...">
                 <button class="form-search__button" type="submit" aria-label="Поиск">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,6 +39,24 @@ const createHeader = () => {
     `);
     return header;
 };
+
+export const createSearch = () => {
+    const search = document.createElement('section');
+    search.className = 'search';
+    //TODO    search.ariaLabel = 'По вашему запросу “Россия” найдено 8 результатов';v
+    //TODO По</p>вашему запросу “Россия” найдено 8 результатов
+    search.insertAdjacentHTML('beforeend', `
+         <div class="container news__container">
+            <h2 class="news__subtitle"><p class="news__subtitle-text">
+                По</p>вашему запросу “Россия” найдено 8 результатов
+            </h2>
+            <div class="news__list">
+            </div>
+        </div>
+    `);
+    return search;
+};
+
 const createMain = () => {
     const main = document.createElement('main');
     main.className = 'main';
@@ -91,7 +109,7 @@ export const createNews = () => {
     const header = createHeader();
     const main = createMain();
     const footer = createFooter();
-    return [header, main, footer,];
+    return [header, main, footer];
 };
 
 
@@ -107,10 +125,10 @@ export const createRow = ({
     const article = document.createElement('article');
     article.classList.add('list__item', 'item');
 
-    let [date,time] = publishedAt.split("T");
-    time = time.slice(0, time.length-1);
-    const [yyyy,mm,dd] = date.split('-');
-    const [h,m] = time.split(':');
+    let [date, time] = publishedAt.split("T");
+    time = time.slice(0, time.length - 1);
+    const [yyyy, mm, dd] = date.split('-');
+    const [h, m] = time.split(':');
     // console.log(' : ',date, time);
     article.innerHTML = `
         <a class="item__link" href="${url}">

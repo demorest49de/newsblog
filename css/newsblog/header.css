@@ -1,6 +1,6 @@
 .header {
     padding-top: 20px;
-    padding-bottom: 12.5px;
+    padding-bottom: 12px;
 }
 
 .header__container {
@@ -16,12 +16,12 @@
     display: flex;
     align-self: center;
     max-width: fit-content;
-    gap: 6.27px;
+    gap: 6px;
     height: 40px;
     grid-area: logo;
 }
 
-.header__subblock {
+.header__sub-block {
     display: grid;
     grid-template-columns: minmax(220px, 500px) 1fr;
     gap: 30px;

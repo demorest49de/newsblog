@@ -1,5 +1,5 @@
 import {preload} from "./preload.js";
-import {renderNewsItems} from "./render.js";
+import {renderNewsItems, renderSearchNewsItems} from "./render.js";
 
 const fetchRequest = async (url,
                             postfix, {
@@ -51,9 +51,6 @@ const cbRenderSearchNews = (error, data, $) => {
 };
 
 export const getNewsHandler = ($) => {
-
-
-
     const initLoadNews = () => {
         preload.show();
         return Promise.all([
@@ -90,6 +87,6 @@ export const postNewsSearchHandler = ($, data) => {
 
     initLoadNews().then(data => {
         preload.remove();
-        renderNewsItems(data[0], $.newsList);
+        renderSearchNewsItems(data);
     });
 };

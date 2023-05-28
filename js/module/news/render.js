@@ -1,4 +1,4 @@
-import {createNews, createRow} from './create.js';
+import {createNews, createRow, createSearch} from './create.js';
 
 
 const mainMinHeight = (app) => {
@@ -28,4 +28,30 @@ export const renderNewsItems = (items, newsList) => {
         const row = createRow(value);
         newsList.append(row);
     });
+};
+
+export const renderSearchNewsItems = (items) => {
+    const newsSection = document.querySelector('.news');
+    let searchSection = document.querySelector('.search');
+
+    if (!searchSection) {
+        searchSection = createSearch();
+        newsSection.insertAdjacentHTML('beforebegin', searchSection.outerHTML);
+    }
+
+    const searchList = searchSection.querySelector('.news__list');
+    while (searchList.firstChild) {
+        searchList.removeChild(searchList.firstChild);
+    }
+
+    console.log(' : ', items);
+    if (Array.isArray(items)) {
+        items.forEach((value) => {
+            const row = createRow(value);
+            searchList.append(row);
+        });
+    } else {
+        const row = createRow(items);
+        searchList.append(row);
+    }
 };
