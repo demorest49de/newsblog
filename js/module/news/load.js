@@ -51,6 +51,7 @@ export const loadNewsHandler = ($) => {
     };
 
     const initLoadNews = () => {
+
         preload.show();
         return Promise.all([
             fetchRequest('', {
@@ -64,8 +65,8 @@ export const loadNewsHandler = ($) => {
     };
 
     initLoadNews().then(data => {
-        console.log(' : ',data);
         preload.remove();
         renderNewsItems(data[0], $.newsList);
+
     });
 };
