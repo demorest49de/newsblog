@@ -37,10 +37,11 @@
     overflow: hidden;
 }
 
-/*.item__image img {*/
-/*    object-fit: contain;*/
-/*    object-position: center;*/
-/*}*/
+.item__image img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+}
 
 .item__block {
     position: relative;
@@ -57,13 +58,17 @@
 }
 
 .item__subtitle {
-    max-width: 240px;
+    width: 240px;
+    height: 84px;
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
     color: #212121;
     margin-bottom: 10px;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .item__preview-text {

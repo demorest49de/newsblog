@@ -223,6 +223,11 @@ export const createRow = ({
     const article = document.createElement('article');
     article.classList.add('list__item', 'item');
 
+    let [date,time] = publishedAt.split("T");
+    time = time.slice(0, time.length-1);
+    const [yyyy,mm,dd] = date.split('-');
+    const [h,m] = time.split(':');
+    console.log(' : ',date, time);
     article.innerHTML = `
         <a class="item__link" href="${url}">
             <figure class="item__image">
@@ -237,8 +242,8 @@ export const createRow = ({
                 </div>
                 <div class="item__subblock">
                     <div class="item__datetime">
-                        <span class="item__date">16/03/2022</span>
-                        <span class="item__time">17:44</span>
+                        <span class="item__date">${dd}/${mm}/${yyyy}</span>
+                        <span class="item__time">${h}:${m}</span>
                     </div>
                     <span class="item__author">${author}</span>
                 </div>
