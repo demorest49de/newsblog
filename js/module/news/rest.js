@@ -14,14 +14,13 @@ const fetchRequest = async (url,
             method
         };
 
-        // if (body) options.body = JSON.stringify(body);
         let result = '';
         if(postfix === 'everything'){
             result = url + postfix + '?' + `q=${body}` + '&sortBy=popularity';
         }
 
         const country = $.selectedCountry || document.querySelector('.header__country-select').value;
-
+//TODO очищать поиск если выбрана другая страна; также очищать строку поиска при смене страны;
         if(postfix === 'top-headlines'){
             result = url + postfix + '?' + `country=${country}`;
         }
@@ -80,7 +79,6 @@ export const getNewsHandler = ($) => {
         preload.show();
         return Promise.all([
             fetchRequest($.URL, 'top-headlines', {
-            // fetchRequest('/js/test.json', '', {
                 callback: cbRenderNews,
                 headers: {
                     'X-Api-Key': $.APIKEY,
@@ -106,7 +104,6 @@ export const postNewsSearchHandler = ($, data) => {
             },
             body: data,
             $,
-            // method: $.verbs.post,
         });
     };
 

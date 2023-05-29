@@ -4,10 +4,14 @@
     right: 0;
     top: 0;
     bottom: 0;
+    background-color: rgba(0,0,0,0.4);
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 386px;
+    align-items: start;
+}
+
+.preload{
+    margin-top: 250px;
     animation: rotate 5s infinite linear;
     -webkit-animation: rotate 5s infinite linear;
 }
