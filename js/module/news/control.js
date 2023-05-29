@@ -1,4 +1,4 @@
-import {postNewsSearchHandler} from "./rest.js";
+import {postNewsSearchHandler, getNewsHandler} from "./rest.js";
 
 export const submitForm = ($) => {
     $.form.addEventListener('submit', async e => {
@@ -8,5 +8,13 @@ export const submitForm = ($) => {
         const {search} = data;
         $.form.reset();
         postNewsSearchHandler($, search);
+    });
+};
+
+export const handleCountrySelect = ($) => {
+    $.countrySelect.addEventListener('change', ({target}) => {
+        console.log(' : ',target.value);
+        $.selectedCountry = target.value;
+        getNewsHandler($);
     });
 };

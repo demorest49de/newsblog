@@ -29,10 +29,10 @@ const createHeader = () => {
 
             <div class="header__select-wrapper">
                 <select class="header__country-select">
-                    <option value="russian">россия</option>
-                    <option value="russian">россия</option>
-                    <option value="russian">россия</option>
-                    <option value="russian">россия</option>
+                    <option value="ru">Россия</option>
+                    <option value="us">США</option>
+                    <option value="hu">Венгрия</option>
+                    <option value="cn">Китай</option>
                 </select>
             </div>
         </div>
@@ -43,8 +43,7 @@ const createHeader = () => {
 export const createSearch = () => {
     const search = document.createElement('section');
     search.className = 'search';
-    //TODO    search.ariaLabel = 'По вашему запросу “Россия” найдено 8 результатов';v
-    //TODO По</p>вашему запросу “Россия” найдено 8 результатов
+    search.ariaLabel = 'поиск новостей';
     search.insertAdjacentHTML('beforeend', `
          <div class="container news__container">
             <h2 class="news__subtitle"><p class="news__subtitle-text">
@@ -129,25 +128,26 @@ export const createRow = ({
     time = time.slice(0, time.length - 1);
     const [yyyy, mm, dd] = date.split('-');
     const [h, m] = time.split(':');
-    // console.log(' : ',date, time);
+    console.log(' : ',urlToImage);
+    //TODO реализовать promise Для загрузки img
     article.innerHTML = `
         <a class="item__link" href="${url}">
             <figure class="item__image">
-                <img src="${urlToImage}" alt="${title}">
+                <img src="${urlToImage || '/img/news/no-image.jpg'}" alt="${title}">
             </figure>
             <div class="item__block">
                 <h3 class="item__subtitle">
                     ${title}
                 </h3>
                 <div class="item__preview-text">
-                    ${description}
+                    ${description || ''}
                 </div>
                 <div class="item__subblock">
                     <div class="item__datetime">
                         <span class="item__date">${dd}/${mm}/${yyyy}</span>
                         <span class="item__time">${h}:${m}</span>
                     </div>
-                    <span class="item__author">${author ? author : ''}</span>
+                    <span class="item__author">${author || ''}</span>
                 </div>
             </div>
         </a>

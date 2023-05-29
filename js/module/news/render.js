@@ -31,8 +31,12 @@ export const renderNewsItems = ({result: items, $}, newsList) => {
 };
 
 export const renderSearchNewsItems = ({result: items, $}) => {
-    const newsSection = document.querySelector('.news');
     let searchSection = document.querySelector('.search');
+    if(!$.body.trim()){
+        searchSection?.remove();
+        return;
+    }
+    const newsSection = document.querySelector('.news');
 
     if (!searchSection) {
         searchSection = createSearch();
@@ -41,8 +45,8 @@ export const renderSearchNewsItems = ({result: items, $}) => {
 
     const searchList = document.querySelector('.search .news__list');
     const subtitle = document.querySelector('.search .news__subtitle');
-    subtitle.textContent = `По вашему запросу "${$.body}" найдено ${$.body.length - 1} результатов`;
-    console.log(searchSection.outerHTML);
+    subtitle.textContent = `По вашему запросу "${$.body}" найдено ${items.length} результатов`;
+
     while (searchList.firstChild) {
         searchList.removeChild(searchList.firstChild);
     }
