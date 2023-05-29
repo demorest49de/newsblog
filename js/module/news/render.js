@@ -19,7 +19,7 @@ export const
         return data;
     };
 
-export const renderNewsItems = (items, newsList) => {
+export const renderNewsItems = ({result: items, $}, newsList) => {
     while (newsList.firstChild) {
         newsList.removeChild(newsList.firstChild);
     }
@@ -30,7 +30,7 @@ export const renderNewsItems = (items, newsList) => {
     });
 };
 
-export const renderSearchNewsItems = (items) => {
+export const renderSearchNewsItems = ({result: items, $}) => {
     const newsSection = document.querySelector('.news');
     let searchSection = document.querySelector('.search');
 
@@ -39,7 +39,10 @@ export const renderSearchNewsItems = (items) => {
         newsSection.insertAdjacentHTML('beforebegin', searchSection.outerHTML);
     }
 
-    const searchList = searchSection.querySelector('.news__list');
+    const searchList = document.querySelector('.search .news__list');
+    const subtitle = document.querySelector('.search .news__subtitle');
+    subtitle.textContent = `По вашему запросу "${$.body}" найдено ${$.body.length - 1} результатов`;
+    console.log(searchSection.outerHTML);
     while (searchList.firstChild) {
         searchList.removeChild(searchList.firstChild);
     }

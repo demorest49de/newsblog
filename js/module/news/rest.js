@@ -19,7 +19,7 @@ const fetchRequest = async (url,
         if (headers) options.headers = headers;
         const response = await fetch(url, options);
         // const response = await fetch($.URL, options);
-
+        $.body = body;
         if (response.ok) {
             const data = await response.json();
             if (callback) return callback(null, data, $);
@@ -37,7 +37,7 @@ const cbRenderNews = (error, data, $) => {
     const result = data.articles.filter((e, i) => {
         return i < 8;
     });
-    return result;
+    return {result, $};
 };
 
 const cbRenderSearchNews = (error, data, $) => {
@@ -45,9 +45,9 @@ const cbRenderSearchNews = (error, data, $) => {
         return;
     }
     const result = data.articles.filter((e, i) => {
-        return i < 8;
+        return i < 9;
     });
-    return result;
+    return {result, $};
 };
 
 export const getNewsHandler = ($) => {
@@ -60,6 +60,7 @@ export const getNewsHandler = ($) => {
                     'Content-Type': 'application/json',
                     'X-Api-Key': $.APIKEY,
                 },
+                $,
             }),
         ]);
     };
