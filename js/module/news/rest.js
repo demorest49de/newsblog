@@ -82,6 +82,9 @@ export const getNewsHandler = ($) => {
             fetchRequest($.URL, 'top-headlines', {
                 callback: cbRenderNews,
                 headers: {
+                    "Access-Control-Allow-Headers" : "Content-Type",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "OPTIONS,GET",
                     'X-Api-Key': $.APIKEY,
                 },
                 $,
@@ -99,7 +102,7 @@ export const getNewsHandler = ($) => {
     });
 };
 
-export const postNewsSearchHandler = ($, data) => {
+export const getNewsSearchHandler = ($, data) => {
     const initLoadNews = () => {
         preload.show();
         return fetchRequest($.URL, 'everything', {
@@ -114,7 +117,6 @@ export const postNewsSearchHandler = ($, data) => {
 
     initLoadNews().then(data => {
         preload.remove();
-        console.log(' : ', data);
         if (!data) {
             showErrorMessage();
             return;
