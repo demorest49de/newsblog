@@ -86,11 +86,15 @@ export const renderSearchNewsItems = ({result: items, $}) => {
         searchList.removeChild(searchList.firstChild);
     }
 
-    console.log(' : ', items);
     if (Array.isArray(items)) {
-        items.forEach((value) => {
-            const row = createRow(value);
-            searchList.append(row);
+        initImg(items, $).then(items => {
+            console.log(' : ', items);
+            items.forEach((data) => {
+                data.then(data => {
+                    const row = createRow(data);
+                    searchList.append(row);
+                });
+            });
         });
     } else {
         const row = createRow(items);
