@@ -82,7 +82,7 @@ export const getNewsHandler = ($) => {
             fetchRequest($.URL, 'top-headlines', {
                 callback: cbRenderNews,
                 headers: {
-                    // 'X-Api-Key': $.APIKEY,
+                    'X-Api-Key': $.APIKEY,
                 },
                 $,
             }),
