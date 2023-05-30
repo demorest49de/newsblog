@@ -15,13 +15,13 @@ const fetchRequest = async (url,
         };
 
         let result = '';
-        if(postfix === 'everything'){
+        if (postfix === 'everything') {
             result = url + postfix + '?' + `q=${body}` + '&sortBy=popularity';
         }
 
         const country = $.selectedCountry || document.querySelector('.header__country-select').value;
 //TODO очищать поиск если выбрана другая страна; также очищать строку поиска при смене страны;
-        if(postfix === 'top-headlines'){
+        if (postfix === 'top-headlines') {
             result = url + postfix + '?' + `country=${country}`;
         }
         // result += `&apiKey=${$.APIKEY}`;
@@ -29,7 +29,7 @@ const fetchRequest = async (url,
 
         const response = await fetch(result, options);
         // const response = await fetch('/js/test.json', options);
-        console.log(' : ',response);
+        console.log(' : ', response);
         $.body = body;
         if (response.ok) {
             const data = await response.json();
@@ -41,14 +41,18 @@ const fetchRequest = async (url,
     }
 };
 
+const showErrorMessage = () => {
+    const subtitle = document.querySelector('.news .news__subtitle');
+    subtitle.textContent = `Что-то пошло не так..`;
+};
+
 const cbRenderNews = (error, data, $) => {
     if (error) {
-        const subtitle = document.querySelector('.news .news__subtitle');
-        subtitle.textContent = `Что-то пошло не так..`;
+        showErrorMessage();
         return;
     }
     const result = data.articles.filter((e, i, array) => {
-            const remainder = array.length % 4;
+        const remainder = array.length % 4;
         return i < array.length - remainder;
     });
     return {result, $};
@@ -56,8 +60,7 @@ const cbRenderNews = (error, data, $) => {
 
 const cbRenderSearchNews = (error, data, $) => {
     if (error) {
-        const subtitle = document.querySelector('.search .news__subtitle');
-        subtitle.textContent = `Что-то пошло не так..`;
+        showErrorMessage();
         return;
     }
 
@@ -66,7 +69,7 @@ const cbRenderSearchNews = (error, data, $) => {
         const remainder = length % 4;
         const value = length - remainder;
         const percentage = 20;
-        const result  =  (value*percentage)/value;
+        const result = (value * percentage) / value;
         return i < result;
     });
     return {result, $};
@@ -79,7 +82,7 @@ export const getNewsHandler = ($) => {
             fetchRequest($.URL, 'top-headlines', {
                 callback: cbRenderNews,
                 headers: {
-                    'X-Api-Key': $.APIKEY,
+                    // 'X-Api-Key': $.APIKEY,
                 },
                 $,
             }),
@@ -88,9 +91,10 @@ export const getNewsHandler = ($) => {
 
     initLoadNews().then(data => {
         preload.remove();
-        console.log(' : ',data);
-        if(data){
+        if (data[0]) {
             renderNewsItems(data[0], $.newsList);
+        }else{
+            showErrorMessage();
         }
     });
 };
@@ -110,8 +114,11 @@ export const postNewsSearchHandler = ($, data) => {
 
     initLoadNews().then(data => {
         preload.remove();
-        console.log(' : ',data);
-        if(!data) return;
+        console.log(' : ', data);
+        if (!data) {
+            showErrorMessage();
+            return;
+        }
         renderSearchNewsItems(data);
     });
 };
