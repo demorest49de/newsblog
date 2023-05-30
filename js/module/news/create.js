@@ -88,15 +88,21 @@ const createFooter = () => {
             </div>
             <span class="footer__copyright">© 2020-2022 News</span>
             <div class="footer__social">
-                <figure class="footer__figure">
-                    <img src="/img/footer/twitter.svg" alt="twitter">
-                </figure>
-                <figure class="footer__figure">
-                    <img src="/img/footer/social.svg" alt="social">
-                </figure>
-                <figure class="footer__figure">
-                    <img src="/img/footer/vk.svg" alt="vk">
-                </figure>
+                <a class="footer__link" href="https://www.twitter.com">
+                    <figure class="footer__figure">
+                        <img src="/img/footer/twitter.svg" alt="twitter">
+                    </figure>
+                </a>
+                <a class="footer__link" href="https://www.habr.com">
+                    <figure class="footer__figure">
+                        <img src="/img/footer/habr.svg" alt="habr">
+                    </figure>
+                </a>
+                <a class="footer__link" href="https://www.vk.com">    
+                    <figure class="footer__figure">
+                        <img src="/img/footer/vk.svg" alt="vk">
+                    </figure>
+                </a>
             </div>
         </div>
     `);
