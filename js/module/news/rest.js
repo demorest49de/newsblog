@@ -24,10 +24,8 @@ const fetchRequest = async (url,
         if(postfix === 'top-headlines'){
             result = url + postfix + '?' + `country=${country}`;
         }
-
+        result += `&apiKey=${$.APIKEY}`;
         if (headers) options.headers = headers;
-
-
 
         const response = await fetch(result, options);
         // const response = await fetch('/js/test.json', options);
