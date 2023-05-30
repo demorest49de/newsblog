@@ -24,7 +24,7 @@ const fetchRequest = async (url,
         if(postfix === 'top-headlines'){
             result = url + postfix + '?' + `country=${country}`;
         }
-        result += `&apiKey=${$.APIKEY}`;
+        // result += `&apiKey=${$.APIKEY}`;
         if (headers) options.headers = headers;
 
         const response = await fetch(result, options);
@@ -88,7 +88,10 @@ export const getNewsHandler = ($) => {
 
     initLoadNews().then(data => {
         preload.remove();
-        renderNewsItems(data[0], $.newsList);
+        console.log(' : ',data);
+        if(data){
+            renderNewsItems(data[0], $.newsList);
+        }
     });
 };
 
@@ -107,6 +110,7 @@ export const postNewsSearchHandler = ($, data) => {
 
     initLoadNews().then(data => {
         preload.remove();
+        console.log(' : ',data);
         if(!data) return;
         renderSearchNewsItems(data);
     });
