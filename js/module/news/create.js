@@ -117,7 +117,6 @@ export const createNews = () => {
     return [header, main, footer];
 };
 
-
 export const createRow = ({
                               author,
                               description,
@@ -134,12 +133,16 @@ export const createRow = ({
     time = time.slice(0, time.length - 1);
     const [yyyy, mm, dd] = date.split('-');
     const [h, m] = time.split(':');
+    let src = '';
+    urlToImage.includes(`/null`) ? src = '/img/news/no-image.jpg'
+        : src = urlToImage;
+    ;
+    console.log(' : ',src);
     console.log(' : ',urlToImage);
-    //TODO реализовать promise Для загрузки img
     article.innerHTML = `
         <a class="item__link" href="${url}">
             <figure class="item__image">
-                <img src="${urlToImage || '/img/news/no-image.jpg'}" alt="${title}">
+                <img src="${src}" alt="${title}">
             </figure>
             <div class="item__block">
                 <h3 class="item__subtitle">

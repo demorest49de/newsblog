@@ -20,7 +20,6 @@ const fetchRequest = async (url,
         }
 
         const country = $.selectedCountry || document.querySelector('.header__country-select').value;
-//TODO очищать поиск если выбрана другая страна; также очищать строку поиска при смене страны;
         if (postfix === 'top-headlines') {
             result = url + postfix + '?' + `country=${country}`;
         }
@@ -29,7 +28,7 @@ const fetchRequest = async (url,
 
         const response = await fetch(result, options);
         // const response = await fetch('/js/test.json', options);
-        console.log(' : ', response);
+
         $.body = body;
         if (response.ok) {
             const data = await response.json();
@@ -82,9 +81,9 @@ export const getNewsHandler = ($) => {
             fetchRequest($.URL, 'top-headlines', {
                 callback: cbRenderNews,
                 headers: {
-                    "Access-Control-Allow-Headers" : "Content-Type",
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "OPTIONS,GET",
+                    // "Access-Control-Allow-Headers" : "Content-Type",
+                    // "Access-Control-Allow-Origin": "*",
+                    // "Access-Control-Allow-Methods": s"OPTIONS,GET",
                     'X-Api-Key': $.APIKEY,
                 },
                 $,

@@ -19,20 +19,55 @@ export const
         return data;
     };
 
+const loadImageAsync = (url) => {
+    return new Promise((resolve, reject) => {
+        const tester = new Image();
+        tester.addEventListener('load', ({target}) => {
+            // console.log(' : ', target);
+            resolve(target.src);
+        });
+        tester.addEventListener('error', ({target}) => {
+            console.log(' : ', target);
+            resolve(target.src);
+        });
+        tester.src = url;
+    });
+};
+
+
+const initImg = async (items, $) => {
+    return await items.map(async item => {
+        const src = await loadImageAsync(item.urlToImage).then(data => {
+            return data;
+        });
+        try {
+            item.urlToImage = src;
+            return item;
+        } catch (err) {
+            console.warn(' : ', err);
+        }
+    });
+};
+
 export const renderNewsItems = ({result: items, $}, newsList) => {
     while (newsList.firstChild) {
         newsList.removeChild(newsList.firstChild);
     }
-    console.log(' : ', items);
-    items.forEach((value) => {
-        const row = createRow(value);
-        newsList.append(row);
+
+    initImg(items, $).then(items => {
+        console.log(' : ', items);
+        items.forEach((data) => {
+            data.then(data => {
+                const row = createRow(data);
+                $.newsList.append(row);
+            });
+        });
     });
 };
 
 export const renderSearchNewsItems = ({result: items, $}) => {
     let searchSection = document.querySelector('.search');
-    if(!$.body.trim()){
+    if (!$.body.trim()) {
         searchSection?.remove();
         return;
     }

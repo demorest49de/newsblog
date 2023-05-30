@@ -14,6 +14,7 @@ export const submitForm = ($) => {
 export const handleCountrySelect = ($) => {
     $.countrySelect.addEventListener('change', ({target}) => {
         $.selectedCountry = target.value;
+        $.form.querySelector('.form-search__input').value = '';
         getNewsHandler($);
     });
 };
